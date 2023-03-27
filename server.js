@@ -18,7 +18,7 @@ mongoose
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 // router
 import pinRouter from "./routes/pins.js";
 import userRouter from "./routes/users.js";
