@@ -30,9 +30,9 @@ app.use("/api/user", userRouter);
 app.use("/api/herb", herbRouter);
 app.use("/api/farm", farmRouter);
 
-// app.get("/", (req, res) => {
-//   res.send("Hello world");
-// });
+app.get("/", (req, res) => {
+  res.send("Welcome to cos4105 api by Tanatip");
+});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
