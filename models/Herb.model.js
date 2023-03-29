@@ -85,6 +85,10 @@ const herbSchema = new mongoose.Schema(
     approved: {
       type: Boolean,
       default: false
+    },
+    create_by: {
+      type: String,
+      default: "admin"
     }
   },
   {
