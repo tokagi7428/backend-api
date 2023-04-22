@@ -24,11 +24,13 @@ import pinRouter from "./routes/pins.js";
 import userRouter from "./routes/users.js";
 import herbRouter from './routes/herbs.js'
 import farmRouter from './routes/farm.js'
+import statisticRouter from "./routes/statistics.js";
 
 app.use("/api/pins", pinRouter);
 app.use("/api/user", userRouter);
 app.use("/api/herb", herbRouter);
 app.use("/api/farm", farmRouter);
+app.use("/api/statistics", statisticRouter)
 
 app.get("/", (req, res) => {
   res.send("Welcome to cos4105 api by Tanatip");
