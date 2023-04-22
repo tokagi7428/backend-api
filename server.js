@@ -18,7 +18,7 @@ mongoose
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(bodyParser.json())
 // router
 import pinRouter from "./routes/pins.js";
 import userRouter from "./routes/users.js";
@@ -33,7 +33,7 @@ app.use("/api/farm", farmRouter);
 app.use("/api/statistics", statisticRouter)
 
 app.get("/", (req, res) => {
-  res.send("Welcome to cos4105 api by Tanatip");
+  res.send("Hello world");
 });
 
 const PORT = process.env.PORT || 5000;

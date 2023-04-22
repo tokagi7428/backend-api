@@ -10,6 +10,23 @@ userRouter.get("/", async (req, res) => {
   res.send(users)
 })
 
+// update user
+userRouter.put("/:id/edit", async (req, res) => {
+  try {
+    // console.log(req.body)
+    const updateUser = await User.findByIdAndUpdate(
+      req.params.id,
+      { $set: req.body },
+      { new: true }
+    )
+    // console.log({ updateUser })
+    res.status(201).json({ message: "update was successfully", status: "SUCCESS", data: updateUser });
+
+  } catch (error) {
+    console.log({ error })
+  }
+});
+
 // login
 userRouter.post("/login", async (req, res) => {
   try {
@@ -30,6 +47,7 @@ userRouter.post("/login", async (req, res) => {
               _id: user._id,
               username: user.username,
               isAdmin: user.isAdmin,
+              role: user.role,
               token: generateToken(user)
             }
           })
