@@ -1,0 +1,7 @@
+PORT = 5000
+# https://backend-api-production-5b2e.up.railway.app/api/herb
+MONGODB_URL = mongodb://localhost:27017/maptrip
+
+MONGODB_URL_ONLINE = mongodb+srv://cos4105:cos4105@cluster0.fhxuvg2.mongodb.net/farm-herb?retryWrites=true&w=majority
+
+JWT_SECRET = thisismyS+cret

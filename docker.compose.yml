@@ -1,27 +1,22 @@
-version: "3"
+version: '3.9'
 services:
-  build: .
   api-server:
-    image: api-server
+    build: .
     ports:
       - "5000:5000"
-    networks:
-      - mern-app
     depends_on:
-      - mongo
-
-    mongo:
-      image: mongo:3.6.19-xenial
-      ports:
-        - "27017:27017"
-      networks:
-        - mern-app
-      volumes:
-        - mongo-data:/data/db
-networks:
-  mern-app:
-    driver: bridge
-
-volumes:
-  mongo-data:
-    driver: local
+      - mymongo
+    env_file: .env
+    environment:
+      - MONGODB_URL=mongodb://localhost/maptrip
+      - JWT_SECRET=thisismyS+cret
+  mymongo:
+    image: mymongo
+    ports:
+      - "27017:27017"
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=cos4105
+      - MONGO_INITDB_ROOT_PASSWORD=cos4105
