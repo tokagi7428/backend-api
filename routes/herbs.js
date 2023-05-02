@@ -1,7 +1,9 @@
 import express from "express";
 import Herb from "../models/Herb.model.js";
+import { Client } from "@elastic/elasticsearch"
 
 const herbRouter = express.Router();
+const elasticClient = new Client({ node: 'http://localhost:5000' });
 
 // create a pin
 // get all Herb
